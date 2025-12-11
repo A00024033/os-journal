@@ -192,3 +192,27 @@ Reflection :
 This week helped me build a complete virtual environment from scratch and understand the differences between server and workstation distributions. Installing and configuring two different Linux systems allowed me to compare their behaviour directly and appreciate how design choices (like update frequency or security defaults) impact real-world server administration.
 
 Networking both machines through a bridged adapter gave me a realistic server–client relationship, where the Ubuntu server provided services and the Debian workstation acted as a testing and management system. I also reinforced my understanding of essential Linux commands and system introspection tools.
+
+<div style="display:flex; gap:10px; margin-top:20px;">
+  <a href="index.html" style="
+     background:#f4d7e3;
+     padding:10px 18px;
+     color:#5a3a45;
+     border-radius:8px;
+     text-decoration:none;
+     border:1px solid #e7bdcc;
+     font-weight:600;">
+     ⬅ Back to Home
+  </a>
+
+  <a href="week2.html" style="
+     background:#f4d7e3;
+     padding:10px 18px;
+     color:#5a3a45;
+     border-radius:8px;
+     text-decoration:none;
+     border:1px solid #e7bdcc;
+     font-weight:600;">
+     ➡ Go to Week 2
+  </a>
+</div>
