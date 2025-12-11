@@ -159,6 +159,7 @@ ip addr :
 Confirms the bridged interface and IPv4 address 192.168.1.221.
 
 Operating System Verification
+
 lsb_release -a : 
 
 ![OS Release](images/osrelease.png)
@@ -166,6 +167,7 @@ lsb_release -a :
 Confirms Ubuntu Server 24.04.3 LTS (Noble).
 
 Debian Workstation – System Specifications
+
 uname -a
 
 [uname Debian](images/uname1.png)
