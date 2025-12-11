@@ -110,6 +110,7 @@ Disk Usage :
 df -h :
 
 ![Disk Usage](images/diskusage.png)
+
 Total Disk: 25 GB
 Used: ~12%
 Free: ~21 GB
@@ -118,12 +119,14 @@ Network Configuration
 ip addr :
 
 ![IP address](images/ip.png)
+
 Confirms the bridged interface and IPv4 address 192.168.1.221.
 
 Operating System Verification
 lsb_release -a : 
 
 ![OS Release](images/osrelease.png)
+
 Confirms Ubuntu Server 24.04.3 LTS (Noble).
 
 Reflection :
