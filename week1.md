@@ -94,28 +94,33 @@ Active Services & Ports
 5. System Specifications Using CLI (Verification Evidence)
   System verification was completed using the required command-line tools.
 Kernel & Architecture
-uname -a :  ![uname output](./images/sysinfo.png)
+uname -a :
+ ![uname output](./images/sysinfo.png)
 Confirms a 64-bit Linux kernel running on x86_64 architecture.
 
 Memory Usage 
-free -h : ![Memory Usage](images/memoryusage.png)
+free -h :
+![Memory Usage](images/memoryusage.png)
 -Total RAM: ~1.9 GB
 -Used: ~347 MB
 -Swap: Disabled
   This confirms the system is lightweight and efficient.
 
 Disk Usage : 
-df -h : ![Disk Usage](images/diskusage.png)
+df -h :
+![Disk Usage](images/diskusage.png)
 Total Disk: 25 GB
 Used: ~12%
 Free: ~21 GB
 
 Network Configuration
-ip addr : ![IP address](images/ip.png)
+ip addr :
+![IP address](images/ip.png)
 Confirms the bridged interface and IPv4 address 192.168.1.221.
 
 Operating System Verification
-lsb_release -a : ![OS Release](images/osrelease.png)
+lsb_release -a : 
+![OS Release](images/osrelease.png)
 Confirms Ubuntu Server 24.04.3 LTS (Noble).
 
 Reflection :
