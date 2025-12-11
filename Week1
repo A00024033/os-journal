@@ -94,7 +94,7 @@ Active Services & Ports
 5. System Specifications Using CLI (Verification Evidence)
   System verification was completed using the required command-line tools.
 Kernel & Architecture
-uname -a : ![uname output](./images/sysinfo.png)
+uname -a : ![uname output](../images/sysinfo.png)
 Confirms a 64-bit Linux kernel running on x86_64 architecture.
 
 Memory Usage 
