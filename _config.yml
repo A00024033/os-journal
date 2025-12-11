@@ -1,0 +1,19 @@
+title: "Operating Systems Coursework Journal"
+description: "A00024033 – CMPN202 Weekly Journal"
+theme: jekyll-theme-cayman
+
+# Enable custom CSS
+plugins:
+  - jekyll-include-cache
+
+include:
+  - assets
+
+# Custom Stylesheet
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# Custom CSS file (create assets/css/style.scss)
+footer: "Created by Hajar Natiq, Student ID : A00024033 for Operating Systems Coursework"
+
