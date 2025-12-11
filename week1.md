@@ -105,7 +105,7 @@ Testing web services through the browser
 Simulating a realistic server–client environment
 Ubuntu Server Network Output (ip addr)
 
-[Ip Ubuntu](/images/ip.png)
+[Ip Ubuntu](images/ip.png)
 
 Shows:
 
@@ -117,7 +117,7 @@ Confirms bridged networking is active
 
 Debian Network Output (ip addr)
 
-[Ip Debian](/images/ip1.png)
+[Ip Debian](images/ip1.png)
 
 Shows:
 
@@ -174,15 +174,15 @@ uname -a
 
 free -h
 
-[free Debian](/images/free.png)
+[free Debian](images/free.png)
 
 df -h
 
-[df Debian](/images/dfh.png)
+[df Debian](images/dfh.png)
 
 lsb_release -a
 
-[release Debian](/images/release.png)
+[release Debian](images/release.png)
 
 Reflection :
 This week helped me build a complete virtual environment from scratch and understand the differences between server and workstation distributions. Installing and configuring two different Linux systems allowed me to compare their behaviour directly and appreciate how design choices (like update frequency or security defaults) impact real-world server administration.
