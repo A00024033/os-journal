@@ -1,4 +1,31 @@
 Week 2 – Security Planning & Testing Methodology
+
+<div style="display:flex; gap:10px; margin-top:20px;">
+
+  <a href="index.html" style="
+     background:#f4d7e3;
+     padding:10px 18px;
+     color:#5a3a45;
+     border-radius:8px;
+     text-decoration:none;
+     border:1px solid #e7bdcc;
+     font-weight:600;">
+      Back to Home
+  </a>
+
+  <a href="week3.html" style="
+     background:#f4d7e3;
+     padding:10px 18px;
+     color:#5a3a45;
+     border-radius:8px;
+     text-decoration:none;
+     border:1px solid #e7bdcc;
+     font-weight:600;">
+     ➡ Next: Week 3
+  </a>
+
+</div>
+
 1. Performance Testing Plan (Remote Monitoring & Approach)
 
 This week I designed how I will test and monitor the performance of my Ubuntu Server VM remotely from the Debian workstation. The goal is to understand how the operating system behaves under different workloads without ever using the direct VirtualBox console on the server.
@@ -235,29 +262,3 @@ How to structure tests and collect data
 Similarly, creating the security checklist and threat model now gives a clear roadmap for Weeks 4 and 5, where I will actually implement SSH hardening, firewall rules, AppArmor, automatic updates, and monitoring scripts.
 
 It also made me think about trade-offs: for example, disabling password authentication improves security, but increases setup complexity and risk of locking myself out if I lose my SSH key. This is exactly the kind of security vs usability tension that operating systems have to manage in real environments.
-
-<div style="display:flex; gap:10px; margin-top:20px;">
-
-  <a href="index.html" style="
-     background:#f4d7e3;
-     padding:10px 18px;
-     color:#5a3a45;
-     border-radius:8px;
-     text-decoration:none;
-     border:1px solid #e7bdcc;
-     font-weight:600;">
-      Back to Home
-  </a>
-
-  <a href="week3.html" style="
-     background:#f4d7e3;
-     padding:10px 18px;
-     color:#5a3a45;
-     border-radius:8px;
-     text-decoration:none;
-     border:1px solid #e7bdcc;
-     font-weight:600;">
-     ➡ Next: Week 3
-  </a>
-
-</div>
