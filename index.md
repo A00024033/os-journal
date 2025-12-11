@@ -16,3 +16,4 @@ Use the navigation below to view each week's progress.
 [week 6](week6.md)
 
 [week 7](week7.md)
+ <!-- redeploy -->
