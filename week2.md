@@ -128,14 +128,17 @@ I am prioritising simple, CLI-based tools over heavy GUIs to keep the server lig
 
 This section sets out the security baseline I intend to reach by the end of Phases 4 and 5. For Week 2, it remains a plan and checklist, not a full implementation.
 
-| Area                          | Planned Configuration                                                                                 | Rationale                                                                                            |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| **SSH hardening**             | Enable key-based auth, disable password login, disable root SSH login, limit users                    | Reduce risk of brute-force and credential attacks on SSH.                                            |
-| **Firewall (UFW)**            | Default deny incoming, allow SSH only from Debian workstation IP, allow HTTP (80)                     | Enforce least privilege network access and reduce exposed attack surface.                            |
-| **Mandatory Access Control**  | Enable AppArmor, ensure Apache and critical services have enforcing profiles                          | Prevent services from accessing files or resources they do not need, limiting impact of compromise.  |
-| **Automatic updates**         | Configure unattended security updates and enable periodic package refresh                             | Ensure the system is regularly patched against known vulnerabilities without manual intervention.    |
-| **User privilege management** | Use a non-root admin user with `sudo`, avoid direct root login; separate system and service accounts  | Enforce least privilege and reduce damage if a single account is compromised.                        |
-| **Network security**          | Restrict services to required interfaces and ports; no unnecessary listeners; use host-based firewall | Reduce potential entry points and help contain lateral movement in the virtual network.              |
+| Area | Planned Configuration | Rationale |
+|------|-----------------------|-----------|
+| **SSH hardening** | Enable key-based authentication, disable password login, disable root SSH login, limit users | Reduce risk of brute-force and credential attacks on SSH |
+| **Firewall (UFW)** | Default deny incoming traffic, allow SSH only from Debian workstation IP, allow HTTP (80) | Enforce least-privilege network access and reduce exposed attack surface |
+| **Mandatory Access Control** | Enable AppArmor and ensure Apache and critical services run with enforcing profiles | Prevent services from accessing unnecessary files or resources, limiting impact of compromise |
+| **Automatic updates** | Configure unattended security updates and periodic package refresh | Ensure the system is regularly patched against known vulnerabilities |
+| **User privilege management** | Use a non-root administrative user with sudo and disable direct root login | Reduce damage if a single account is compromised |
+| **Network security** | Restrict services to required interfaces and ports, disable unnecessary listeners | Reduce entry points and limit lateral movement within the virtual network |
+
+This checklist reflects a layered defence-in-depth strategy, combining preventive, detective, and containment controls appropriate for a small production Linux server environment.
+
 2.1 SSH Hardening (Planned)
 
 Planned changes in /etc/ssh/sshd_config:
