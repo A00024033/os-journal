@@ -1,3 +1,25 @@
+<div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+  <a href="../index.html" style="
+    padding:10px 16px;
+    background:#f7c6d9;
+    color:#333;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:600;">
+    ⬅ Back to Home
+  </a>
+
+  <a href="../week4.html" style="
+    padding:10px 16px;
+    background:#cde7ff;
+    color:#333;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:600;">
+    Next Week ➡
+  </a>
+</div>
+
 Week 3 – Process Management and System Monitoring
 Overview
 
