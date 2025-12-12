@@ -1,26 +1,30 @@
-<div style="display:flex; justify-content:space-between; margin-bottom:20px;">
-  <a href="../index.html" style="
-    padding:10px 16px;
-    background:#f7c6d9;
-    color:#333;
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:600;">
-    ⬅ Back to Home
-  </a>
-
-  <a href="../week4.html" style="
-    padding:10px 16px;
-    background:#cde7ff;
-    color:#333;
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:600;">
-    Next Week ➡
-  </a>
-</div>
-
 Week 3 – Process Management and System Monitoring
+
+<div style="display:flex; gap:10px; margin-top:20px;">
+
+  <a href="index.html" style="
+     background:#f4d7e3;
+     padding:10px 18px;
+     color:#5a3a45;
+     border-radius:8px;
+     text-decoration:none;
+     border:1px solid #e7bdcc;
+     font-weight:600;">
+      Back to Home
+  </a>
+
+  <a href="week4.html" style="
+     background:#f4d7e3;
+     padding:10px 18px;
+     color:#5a3a45;
+     border-radius:8px;
+     text-decoration:none;
+     border:1px solid #e7bdcc;
+     font-weight:600;">
+     ➡ Next: Week 4
+  </a>
+
+</div>
 Overview
 
 This week focused on understanding how Linux manages processes and system resources at runtime. The aim was to observe active processes, monitor CPU and memory usage, manage background jobs, and control processes using command-line tools. All observations were carried out on the Ubuntu Server virtual machine.
