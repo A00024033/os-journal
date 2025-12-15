@@ -41,9 +41,11 @@ sudo aa-status --verbose
 
 These outputs confirm that AppArmor is enabled, profiles are loaded, and enforcement is active, ensuring that applications operate within defined security boundaries.
 
-![status_apparmor](apparmor.png)
+![status_apparmor](images/apparmor.png)
 
-![aa-status](aastatus.png)
+![aa-status](images/aastatus.png)
+
+![verbose](images/verbose.png)
 
 2. Automatic Security Updates Configuration
 
@@ -57,7 +59,7 @@ sudo apt install unattended-upgrades
 sudo dpkg-reconfigure unattended-upgrades
 cat /etc/apt/apt.conf.d/20auto-upgrades
 
-![20auto-upgrades](20auto.png)
+![20auto-upgrades](images/20auto.png)
 
 The configuration file confirmed that automatic package list updates and unattended upgrades were enabled.
 
@@ -73,9 +75,9 @@ sudo systemctl start fail2ban
 sudo fail2ban-client status
 sudo fail2ban-client status sshd
 
-![fail2ban-status](fail2ban.png)
+![fail2ban-status](images/fail2ban.png)
 
-![fail2ban-status-sshd](fail2bansshd.png)
+![fail2ban-status-sshd](images/fail2bansshd.png)
 
 4. Security Baseline Verification Script
 
@@ -87,9 +89,9 @@ Script execution:
 
 bash security-baseline.sh
 
-![ls](lsssh.png)
+![ls](images/lsssh.png)
 
-![bash](bashssh.png)
+![bash](images/bashssh.png)
 
 The output confirms that all security controls are correctly configured and operational.
 
@@ -103,7 +105,7 @@ Script execution:
 
 ./monitor-server.sh
 
-![monitor-server](lsmonitor.png)
+![monitor-server](images/lsmonitor.png)
 
 Conclusion
 
