@@ -1,4 +1,4 @@
-Week 3 – Application Selection for Performance Testing
+# Week 3: Application Selection for Performance Testing
 
 <div style="display:flex; gap:10px; margin-top:20px;">
 
@@ -26,13 +26,15 @@ Week 3 – Application Selection for Performance Testing
 
 </div>
 
-Introduction
+## Introduction
 
 This phase focuses on selecting representative applications to evaluate system performance under different workload types. Before running any benchmarks or stress tests, it is essential to plan which applications will be used, what resources they are expected to consume, and how their behaviour will be monitored. This structured approach ensures that later performance testing is meaningful, controlled, and repeatable.
 
 The applications selected in this phase will be installed and executed in later weeks to analyse CPU usage, memory consumption, disk I/O, and network performance on the Ubuntu Server.
 
-1. Application Selection Matrix
+---
+
+## 1. Application Selection Matrix
 
 To cover a broad range of real-world workloads, applications were selected to represent CPU-intensive, memory-intensive, I/O-intensive, network-intensive, and server-based workloads.
 
@@ -46,38 +48,50 @@ To cover a broad range of real-world workloads, applications were selected to re
 
 These applications were chosen because they are lightweight, well-documented, and commonly used in both academic and industry environments.
 
-2. Installation Documentation (Planned)
+---
+
+## 2. Installation Documentation (Planned)
 
 All applications will be installed on the Ubuntu Server using SSH from the Debian workstation, in line with the administrative constraint of remote management only.
 
 The planned installation commands are:
 
+```bash
 sudo apt update
 sudo apt install stress-ng fio iperf3 apache2 -y
+```
 
+These commands ensure that all required testing tools are installed using the official Ubuntu package repositories, maintaining system integrity and ease of updates.
 
-These commands will ensure that all required testing tools are installed using the official Ubuntu package repositories, maintaining system integrity and ease of updates.
+---
 
-3. Expected Resource Profiles
+## 3. Expected Resource Profiles
 
 Before execution, it is important to define expected behaviour for each workload. This allows actual results to be compared against predictions in later analysis.
 
-stress-ng (CPU-intensive)
+### stress-ng (CPU-intensive)
+
 Expected to drive CPU utilisation close to 100% across available cores, with minimal impact on disk and network activity.
 
-stress-ng (Memory-intensive)
+### stress-ng (Memory-intensive)
+
 Expected to consume a large portion of available RAM and potentially trigger swap usage if memory limits are reached.
 
-fio (I/O-intensive)
+### fio (I/O-intensive)
+
 Expected to generate high disk read/write activity, increased I/O wait times, and noticeable disk throughput changes.
 
-iperf3 (Network-intensive)
+### iperf3 (Network-intensive)
+
 Expected to significantly increase network bandwidth usage while having minimal impact on disk usage and moderate CPU utilisation.
 
-Apache2 (Server workload)
+### Apache2 (Server workload)
+
 Expected to show moderate CPU and memory usage under light load, increasing proportionally with concurrent client requests.
 
-4. Monitoring Strategy
+---
+
+## 4. Monitoring Strategy
 
 To measure system performance accurately, different monitoring tools will be used depending on the workload being tested.
 
@@ -91,8 +105,16 @@ To measure system performance accurately, different monitoring tools will be use
 
 This monitoring strategy ensures that each application is measured using appropriate tools, providing accurate and relevant performance data.
 
-Reflection
+---
+
+## Reflection
 
 Planning application selection before executing performance tests helps prevent misleading results and uncontrolled testing. By defining expected resource profiles and monitoring strategies in advance, it becomes easier to identify abnormal behaviour, bottlenecks, or performance limitations when tests are later executed.
 
 This phase highlights the importance of separating design from implementation, ensuring that performance testing in later weeks is structured, repeatable, and aligned with real-world system administration practices.
+
+---
+
+Whenever you’re ready, send **Week 4**.
+You’re doing this properly.
+
