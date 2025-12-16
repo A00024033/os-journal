@@ -1,4 +1,4 @@
-Week 6 – Performance Evaluation and Analysis
+# Week 6: Performance Evaluation and Analysis
 
 <div style="display:flex; gap:10px; margin-top:20px;">
 
@@ -26,27 +26,28 @@ Week 6 – Performance Evaluation and Analysis
 
 </div>
 
-1. Testing Methodology
+---
+
+## 1. Testing Methodology
 
 Performance testing was conducted to evaluate operating system behaviour under different workload conditions. Measurements were taken during baseline (idle) operation, under simulated load, and after applying system optimisations.
 
 Testing focused on CPU usage, memory usage, disk I/O performance, network performance, and system responsiveness. All tests were executed via SSH on the server using standard Linux monitoring and stress-testing tools to ensure repeatability and consistency.
 
-2. Baseline Performance Testing
+---
+
+## 2. Baseline Performance Testing
 
 Baseline measurements were collected while the system was idle to establish a reference point for later comparison.
 
-Tools used
+### Tools used
 
-uptime, top for CPU usage
+* `uptime`, `top` for CPU usage
+* `free -h`, `vmstat` for memory usage
+* `df -h`, `iostat` for disk performance
+* `ping` for network latency
 
-free -h, vmstat for memory usage
-
-df -h, iostat for disk performance
-
-ping for network latency
-
-Baseline Performance Table
+### Baseline Performance Table
 
 | Metric           | Measurement        |
 | ---------------- | ------------------ |
@@ -60,37 +61,47 @@ Baseline Performance Table
 | Average latency  | ~5.86 ms           |
 | Packet loss      | 0%                 |
 
-![](images/cpu.png)
+![cpu](images/cpu.png)
+![cpuload](images/cpuload.png)
+![memory](images/memory.png)
+![disk](images/disk.png)
+![latency](images/latency.png)
 
-![](images/cpuload.png)
+### Baseline Visualisation (CPU & Memory)
 
-![](images/memory.png)
+```mermaid
+bar
+  title Baseline Resource Usage
+  x-axis Metric
+  y-axis Value
+  "CPU Idle %" : 95
+  "Memory Used (MB)" : 341
+  "Available Memory (MB)" : 1600
+```
 
-![](images/disk.png)
+---
 
-![](images/latency.png)
-
-3. Application Load Testing
+## 3. Application Load Testing
 
 Load testing was performed to analyse system behaviour under increased resource demand.
 
-CPU Load Testing
+### CPU Load Testing
 
-CPU stress was applied using stress-ng while monitoring usage with top. CPU load increased significantly, demonstrating how the scheduler handled sustained processing demand.
+CPU stress was applied using `stress-ng` while monitoring usage with `top`. CPU load increased significantly, demonstrating how the scheduler handled sustained processing demand.
 
-Memory Load Testing
+### Memory Load Testing
 
 Memory pressure was simulated using virtual memory stress tests. Memory usage increased, while swap usage remained at zero, indicating sufficient RAM capacity.
 
-Disk I/O Testing
+### Disk I/O Testing
 
-Disk write performance was tested by writing a 1 GB file using dd. The results showed consistent write throughput with no noticeable I/O bottleneck.
+Disk write performance was tested by writing a 1 GB file using `dd`. The results showed consistent write throughput with no noticeable I/O bottleneck.
 
-Network Performance Testing
+### Network Performance Testing
 
-Network throughput and latency were measured using iperf3 and ping. The server demonstrated high throughput and low latency under test conditions.
+Network throughput and latency were measured using `iperf3` and `ping`. The server demonstrated high throughput and low latency under test conditions.
 
-Load Testing Performance Table
+### Load Testing Performance Table
 
 | Metric             | Baseline | Under Load         |
 | ------------------ | -------- | ------------------ |
@@ -103,17 +114,28 @@ Load Testing Performance Table
 | Latency            | ~5.86 ms | ~6–7 ms            |
 | Network throughput | –        | ~16 Gbits/sec      |
 
-![](images/testing.png)
+![testing](images/testing.png)
+![topcpu](images/topcpu.png)
+![stresscpu](images/stresscpu.png)
+![memorytest](images/memorytest.png)
+![ioload](images/ioload.png)
 
-![](images/topcpu.png)
+### Load vs Baseline Comparison (CPU & Memory)
 
-![](images/stresscpu.png)
+```mermaid
+bar
+  title Baseline vs Load
+  x-axis Scenario
+  y-axis Value
+  "CPU Load Baseline" : 0.05
+  "CPU Load Under Load" : 1.35
+  "Memory Used Baseline (MB)" : 341
+  "Memory Used Under Load (MB)" : 366
+```
 
-![](images/memorytest.png)
+---
 
-![](images/ioload.png)
-
-4. Performance Analysis and Bottleneck Identification
+## 4. Performance Analysis and Bottleneck Identification
 
 Analysis of the load testing results indicated that CPU utilisation was the primary bottleneck during high workload scenarios. CPU usage increased significantly under stress, while memory usage remained within safe limits and swap was not utilised.
 
@@ -121,19 +143,21 @@ Disk I/O performance showed low wait times, indicating that storage was not a li
 
 Overall, the system handled load efficiently, with CPU saturation being the main limiting resource under stress.
 
-5. Optimisation Testing
+---
+
+## 5. Optimisation Testing
 
 Two optimisations were implemented to improve system performance and stability.
 
-Optimisation 1: Memory Swappiness Reduction
+### Optimisation 1: Memory Swappiness Reduction
 
 The system’s swappiness value was reduced to minimise unnecessary memory swapping. After applying this change, memory behaviour under load became more stable, with higher available memory maintained during stress testing.
 
-Optimisation 2: CPU Scheduling Priority
+### Optimisation 2: CPU Scheduling Priority
 
-CPU-intensive processes were executed with lower scheduling priority using nice. This reduced the impact of background workloads and improved overall system responsiveness during CPU stress tests.
+CPU-intensive processes were executed with lower scheduling priority using `nice`. This reduced the impact of background workloads and improved overall system responsiveness during CPU stress tests.
 
-Optimisation Comparison Table
+### Optimisation Comparison Table
 
 | Metric           | Before Optimisation | After Optimisation |
 | ---------------- | ------------------- | ------------------ |
@@ -143,27 +167,38 @@ Optimisation Comparison Table
 | Swap usage       | 0                   | 0                  |
 | Latency          | ~6 ms               | ~5 ms              |
 
-![](images/redswap.png)
+![redswap](images/redswap.png)
+![cpuscheduling](images/cpuscheduling.png)
+![catswap](images/catswap.png)
+![opmemory](images/opmemory.png)
+![nice](images/nice.png)
+![topopti](images/topopti.png)
 
-![](images/cpuscheduling.png)
+### Optimisation Impact Visualisation
 
-![](images/catswap.png)
+```mermaid
+bar
+  title Performance Before vs After Optimisation
+  x-axis Metric
+  y-axis Value
+  "CPU Load Before" : 1.35
+  "CPU Load After" : 1.0
+  "Latency Before (ms)" : 6
+  "Latency After (ms)" : 5
+```
 
-![](images/opmemory.png)
+---
 
-![](images/nice.png)
-
-![](images/topopti.png)
-
-6. Network Performance Analysis
+## 6. Network Performance Analysis
 
 Network performance testing showed consistently low latency and high throughput. Packet loss remained at 0% throughout testing, indicating reliable network communication. These results confirm that the network layer does not introduce performance constraints under normal or stressed conditions.
 
-![](images/latency.png)
+![latency](images/latency.png)
+![throughput](images/throughput.png)
 
-![](images/throughput.png)
+---
 
-Conclusion
+## Conclusion
 
 Performance testing demonstrated that the system operates efficiently under both idle and stressed conditions. CPU resources were identified as the primary bottleneck during high workloads, while memory, disk, and network performance remained stable.
 
